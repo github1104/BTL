@@ -7,40 +7,36 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" >
 	<script src="css/bootstrap.min.css"></script>
 	<script src="js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
 	<div id="container">
-		<div id="header">
+		<div id="header">	
 			<div id="top-header">
-				
+				<h2>HH Shop</h2>
 			</div>
 			<div id="nav">
-				<div class="row">
-					<div class="col-md-4">
-						<ul>
-							<li>as</li>
-							<li>b</li>
-							<li>a</li>
-							<li>x</li>
-						</ul>	
-					</div>
-					<div class="col-md-8"> 
-						<div id="menu">
-							<ul>
-								<li><a href="#">Giới thiệu</a></li>
-								<li><a href="#">Dịch vụ</a></li>
-								<li><a href="#">Về chúng tôi</a></li>
-								<li><a href="#">Liên hệ</a></li>
-							</ul>
-						</div>
-					</div>
+				<div id="menu">	
+					<ul>
+						<li><a href="#">Giới thiệu</a></li>
+						<li><a href="#">Dịch vụ</a></li>
+						<li><a href="#">Về chúng tôi</a></li>
+						<li><a href="#">Liên hệ</a></li>
+					</ul>
 				</div>
 			</div>
 			<div id="slideshow">
-				
+				<div id="slide">
+					<img src="pic/cat1.jpg" alt="" id="pic1">
+					<img src="pic/cat2.jpg" alt="" id="pic2">
+					<img src="pic/dog1.jpg" alt="" id="pic3">
+				</div>	
+				<button id="btnNext	">next</button>	
 			</div>
 		</div>
+
+		
 		<div id="main">
 			
 		</div>
@@ -48,5 +44,25 @@
 			
 		</div>
 	</div>
+	<script src="jquery.js"></script>
+	<script>
+		var currentSlide = 1;
+		var $slider = $("#slide ");
+		var slideCount = $slider.children().length;
+		var slideTime = 3000;
+		var animationTime = 1000;
+
+		setInterval(function(){
+			$slider.animate({
+				marginLeft :'-=1200px'
+			},animationTime, function(){
+				currentSlide++;
+				if(currentSlide === slideCount){
+					currentSlide =1;
+					$(this).css("margin-left","0px")
+				}
+			});
+		},slideTime)
+	</script>
 </body>
 </html>
