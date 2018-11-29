@@ -7,15 +7,25 @@
 	height: 100%;
 	background-size: cover;
 }
-#header {
-	width: 100%;
 
+#top-header{
+	height: 50px;
+}
+#logo{
+	padding: 10px 40	px;
+	float: left;
+}
+#login{
+	float: right;
 }
 #nav {
 	background: #A0A0A0FF;
 	margin-bottom: 10px;
 	height: 46px;
 	position: sticky;
+	top: 0;
+	z-index: 99;
+	
 }
 #menu {
 	float: left;
@@ -44,12 +54,6 @@
 #btnSearch a {
 	text-decoration: none;
 }
-#top-header{
-	padding: 10px 0 10px 10px;
-}
-#top-header h2{
-	margin: 0;
-}
 #slideshow {
 	width: 980px;
 	height: 530px;
@@ -60,7 +64,7 @@
 	position: relative;
 	width: 300%;
 	height: 530px;
-	margin: 0;
+	margin: auto;
 	animation:12s slider infinite;
 	
 }
