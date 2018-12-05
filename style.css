@@ -9,7 +9,7 @@
 }
 
 #top-header{
-	height: 50px;
+	height: 60px;
 }
 #logo{
 	padding: 10px 40	px;
@@ -17,6 +17,13 @@
 }
 #login{
 	float: right;
+}
+form {
+	width: 30%;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #b0c4de;
+	
 }
 #nav {
 	background: #A0A0A0FF;
@@ -90,9 +97,8 @@
 	left: 0;
 }
 25%{
-	top: 0:left: -980px;
+	top :0; left: -980px;
 }
-
 50%{
 	left: -980px;
 }
