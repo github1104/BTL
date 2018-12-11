@@ -6,7 +6,7 @@ html,body {
     color: #222;
 }
 .navbar {
-background-color: rgba(82,64,120,0.9) !important;
+background-color: rgba(43, 43, 40, 0.9) !important;
 }
 .navbar li a {
     
@@ -40,6 +40,10 @@ background-color: rgba(82,64,120,0.9) !important;
     background-color: rgb(47, 99, 197);
     border: 1px solid white;
 }
+.jumbotron {
+    padding: 1rem;
+    border-radius: 0;
+}
 /*media query*/
 @media (max-width:992px){
     .carousel-caption {
@@ -54,6 +58,14 @@ background-color: rgba(82,64,120,0.9) !important;
     .carousel-caption h3 {
         text-shadow: 5px 5px 15px #000;
     }
+}
+.welcome hr {
+    border-top: 3px solid rgba(25, 21, 34, 0.8);
+    width: 90%;
+    margin-bottom: 2rem;
+}
+.icon {
+    margin-bottom: 2rem;
 }
 @media (max-width:766px){
     .carousel-caption {
