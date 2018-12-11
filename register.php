@@ -1,11 +1,11 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="login.css" type="text/css">
 </head>
 <body>
     <?php
@@ -27,6 +27,8 @@
             else{
             // kiem tra tai khoan ton tai chua
             $sql="select *from users where username='$username'";
+     
+     
             $check=mysqli_query($conn,$sql);                
             if(mysqli_num_rows($check)>0){
                 echo "Tai khoan da ton tai!";
@@ -41,10 +43,10 @@
             $to = "$mail";  
             $subject = "Send Email from Localhost";
             $txt = "Hello Teacher!";
-            $headers = "From: hoangdv621-id@wru.vn" . "\r\n" .
+            $headers = "From: tuandda62@wru.vn" . "\r\n" .
             "CC: somebodyelse@example.com";
             mail($to,$subject,$txt,$headers);
-
+            
         }}
     ?>
     <div>
