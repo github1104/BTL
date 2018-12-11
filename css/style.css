@@ -9,11 +9,9 @@ html,body {
 background-color: rgba(43, 43, 40, 0.9) !important;
 }
 .navbar li a {
-    
     color: white !important;
 }
 .navbar li a:hover{
-    
     color: black !important;
 }
 .carousel-inner img {
@@ -22,8 +20,6 @@ background-color: rgba(43, 43, 40, 0.9) !important;
 }
 .carousel-caption {
     position: absolute;
-    top: 0;
-    left: 0;
 }
 .carousel-caption h1 {
     font-size: 400%;
@@ -44,6 +40,34 @@ background-color: rgba(43, 43, 40, 0.9) !important;
     padding: 1rem;
     border-radius: 0;
 }
+.hr {
+    border-top: 3px solid rgba(25, 21, 34, 0.8);
+    width: 90%;
+    margin-bottom: 2rem;
+}
+.icon {
+    margin-bottom: 2rem;
+}
+.social a{
+    padding: 5px;
+}
+.social {
+    margin-bottom: 2rem;
+}
+footer {
+    background-color: rgba(43, 43, 40, 0.9);
+    color: aliceblue;
+}
+#txtFooter {
+    padding-top: 2rem;
+}
+.light {
+    border-top: 1px solid #d5d5d5;    
+}
+
+.light-100{
+    border-top: 1px solid #d5d5d5;    
+}
 /*media query*/
 @media (max-width:992px){
     .carousel-caption {
@@ -58,14 +82,6 @@ background-color: rgba(43, 43, 40, 0.9) !important;
     .carousel-caption h3 {
         text-shadow: 5px 5px 15px #000;
     }
-}
-.welcome hr {
-    border-top: 3px solid rgba(25, 21, 34, 0.8);
-    width: 90%;
-    margin-bottom: 2rem;
-}
-.icon {
-    margin-bottom: 2rem;
 }
 @media (max-width:766px){
     .carousel-caption {

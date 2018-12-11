@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -20,7 +21,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Trang Chủ</a>
                     </li>
@@ -34,10 +35,40 @@
                         <a class="nav-link" href="#">Liên Hệ</a>
                     </li>    
                 </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng Nhập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng Ký</a>
+                    </li>
+                </ul>
+        </div>
+    </nav>
+     <!-- The Modal -->
+     <div class="modal fade " id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title">Modal Heading</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  Modaldfdff body..jkhjkhkhkjhkhkhkjkjjkjhkhkhjk
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
             </div>
         </div>
-
-    </nav>
 <!-- -->
 <div class="container-fluid"> 
     <div id="slides" class="carousel slide" data-ride="carousel">
@@ -52,16 +83,23 @@
             <div class="carousel-item active">
               <img src="pic/dog1.jpg" >
               <div class="carousel-caption">
-                    <h1 class="display-2">Example</h1>
-                    <h3>dsadasda</h3>
-                    <button type="button" class="btn btn-primary btn-lg">VIEW</button>
-            </div>
+                    <h1 class="display-2">Dogo</h1>
+                    <h3>Is a dog</h3>
+              </div>
             </div>
             <div class="carousel-item">
               <img src="pic/dog2.jpg" >
+              <div class="carousel-caption">
+                    <h1 class="display-2">Dogi</h1>
+                    <h3>Is a dog too</h3>
+              </div>
             </div>
             <div class="carousel-item">
               <img src="pic/dog3.jpeg" >
+              <div class="carousel-caption">
+                    <h1 class="display-2">Doga</h1>
+                    <h3>Is doga</h3>
+              </div>
             </div>
           </div>
     </div>
@@ -70,6 +108,7 @@
 <div class="container-fluid">
     <div class="jumbotron">
         <div class="">
+            <h3>PetHung</h3>
             <p>Pet Mart là địa chỉ cung cấp các dịch vụ chăm sóc thú cưng uy tín hàng đầu tại TPHCM. Pet Mart đã đưa ra giải pháp để giải quyết về nhu cầu vệ sinh, làm đẹp cho thú cưng của các khách hàng.
                 Tại đây luôn sử dụng những sản phẩm chất lượng, các sản phẩm tắm, trị liệu cho thú cưng đều qua kiểm định gắt gao để đảm bảo an toàn cho mọi thú cưng của khách hàng. 
                 Đặc biệt, với đội ngũ nhân viên dày dặn kinh nghiệm, yêu thú cưng và bằng phương pháp chăm sóc, trị liệu toàn diện, Pet Mart sẽ cung cấp cho thú cưng của bạn một dịch vụ tốt nhất.
@@ -84,16 +123,17 @@
             </a>
         </div>
     </div>
+</div>
+<hr class="hr">
+<!--  dịch vụ -->
 <div class="container-fluid padding">
     <div class="row welcome text-center">
         <div class="col-12">
             <h1 class="display-4">Dịch vụ</h1>
         </div>
-        <hr>
+        
         <div class="col-12">
-
         </div>
-    
     </div>
 </div>
 <div class="container-fluid padding">
@@ -113,8 +153,66 @@
             <h3>Tỉa lông</h3>
             <p>ádasdasdsad</p>
         </div>
+        <hr class="hr">
     </div>
 </div>
+<!-- tin tức -->
+<div class="container-fluid padding" >
+    <div class="row padding">
+        <div class="col-md-12 col-lg-6" >
+            <h2>this is cat</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+                 as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            <br>
+        </div>
+        <div class="col-lg-6">
+            <img src="pic/cat1.jpg" class="img-fluid" >
+        </div>
+    </div>
 </div>
+<hr class="hr">
+<div class="container-fluid padding">
+    <div class="row text-center padding">
+        <div class="col-12">
+            <h2>Liên hệ với chúng tôi</h2>
+        </div>
+        <div class="col-12 social padding">
+            <a href="http://fb.com" target="_blank"><img src="pic/iconFb.png" alt=""></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="pic/iconInstagram.png" alt=""></a>
+            <a href="https://twitter.com/login?lang=vi" target="_blank"><img src="pic/iconTwitter.png" alt=""></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="pic/iconYoutube.png" alt=""></a>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container-fluid padding">
+        <div class="row text-center" id="txtFooter">
+            <div class="col-md-4">
+                <h5>Liên hệ</h5>
+                <hr class="light"> 
+                <p>Hotline: 19002018</p>
+                <p>Mail: gmail@gmail.com</p>
+                <p>Địa chỉ: 120 Trần Hưng Đạo,Hoàn Kiếm,Hà Nội,Việt Nam</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Giờ làm việc</h5>
+                <hr class="light">
+                <p>Thứ 2 - Thứ 6: 8h - 21h</p>
+                <p>Cuối tuần: 8h-14h</p>                
+            </div>
+            <div class="col-md-4">
+                <h5>Liên hệ</h5>
+                <hr class="light">
+                <p>Hotline: 19002018</p>
+                <p>Mail: gmail@gmail.com</p>
+                <p>Address: 120 Trần Hưng Đạo,Hoàn Kiếm,Hà Nội,Việt Nam</p>
+            </div>
+            <div class="col-12">
+                <hr class="light-100">
+                <h5>&copy; PetHH 2018</h5>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
