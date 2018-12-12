@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-    
+<!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-branch" href="#">
@@ -36,20 +39,34 @@
                         <a class="nav-link" href="#">Liên Hệ</a>
                     </li>    
                 </ul>
+                <!-- login logout -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng Nhập</a>
+                        <?php   
+                        if(isset($_SESSION['user'])){
+                        echo '<a class="nav-link" href="#" >Xin Chào '.$_SESSION['user'].'</a>';
+                        }
+                        else 
+                        echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a>';
+                        ?>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng Ký</a>
+                    <?php   
+                        if(isset($_SESSION['user'])){
+                        echo '<a class="nav-link" href="logout.php" >Đăng xuất</a>';
+                        }
+                        else 
+                        echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng ký</a>';
+                        ?>
                     </li>
                 </ul>
         </div>
     </nav>
      <?php
         include('login.php');
+        
      ?>
-<!-- -->
+<!--slide -->
 <div class="container-fluid"> 
     <div id="slides" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->

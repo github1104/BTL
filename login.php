@@ -11,6 +11,24 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
+    <?php
+        include('connection.php');
+        if(isset($_POST['login_button'])){
+          $username=$_POST['username'];
+          $password=$_POST['password'];
+          $sql="select * from users where username='$username'and password='$password' ";
+          $query=mysqli_query($conn,$sql);
+          $nums=mysqli_num_rows($query);
+          if($nums>0){
+            $row=mysqli_fetch_array($query);
+            $_SESSION['user']=$username;
+            header('location:index.php');
+          }
+          else{
+            echo"<script> alert('Tài khoản không đúng')</script>";
+          }
+        }
+    ?>
     <!-- The Modal -->
     <div class="modal fade " id="myModal">
             <div class="modal-dialog modal-dialog-centered">
@@ -32,7 +50,7 @@
                     <input type="password" name="password" id="password" class="form-control" />  
                     <br />  
                     <button type="submit" name="login_button" id="login_button" class="btn btn-dark">Đăng nhập</button>  
-                    <button type="submit" name="login_button" id="login_button" class="btn btn-light">Đăng ký</button> 
+                    <button type="submit" name="login_button" id="logon_button" class="btn btn-light">Đăng ký</button> 
                   </form>
                 </div>
                 
@@ -43,6 +61,6 @@
                 
               </div>
             </div>
-        </div>
+      </div>
 </body>
 </html>
