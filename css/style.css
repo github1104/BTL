@@ -4,6 +4,7 @@ html,body {
     height: 100%;
     font-size: 18px;
     color: #222;
+    font-family: cursive;
 }
 .navbar {
 background-color: rgba(43, 43, 40, 0.9) !important;
@@ -12,7 +13,7 @@ background-color: rgba(43, 43, 40, 0.9) !important;
     color: white !important;
 }
 .navbar li a:hover{
-    color: black !important;
+    color: rgb(179, 166, 166) !important;
 }
 .carousel-inner img {
     width: 100%;
@@ -68,12 +69,14 @@ footer {
 .light-100{
     border-top: 1px solid #d5d5d5;    
 }
+.modal-content {
+    background-color: #ffffff;
+    border-radius: .3rem;
+}
 /*media query*/
 @media (max-width:992px){
     .carousel-caption {
         position: absolute;
-        top: 0;
-        left: 0;
     }
     .carousel-caption h1 {
         font-size: 400%;
@@ -86,8 +89,7 @@ footer {
 @media (max-width:766px){
     .carousel-caption {
         position: absolute;
-        top: 0;
-        left: 0;
+   
     }
     .carousel-caption h1 {
         font-size: 400%;
@@ -100,8 +102,7 @@ footer {
 @media (max-width:576px){
     .carousel-caption {
         position: absolute;
-        top: 0;
-        left: 0;
+    
     }
     .carousel-caption h1 {
         font-size: 400%;

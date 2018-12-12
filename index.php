@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
+    
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-branch" href="#">
@@ -45,30 +46,9 @@
                 </ul>
         </div>
     </nav>
-     <!-- The Modal -->
-     <div class="modal fade " id="myModal">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-              
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Modal Heading</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                  Modaldfdff body..jkhjkhkhkjhkhkhkjkjjkjhkhkhjk
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                
-              </div>
-            </div>
-        </div>
+     <?php
+        include('login.php');
+     ?>
 <!-- -->
 <div class="container-fluid"> 
     <div id="slides" class="carousel slide" data-ride="carousel">
@@ -108,19 +88,17 @@
 <div class="container-fluid">
     <div class="jumbotron">
         <div class="">
-            <h3>PetHung</h3>
-            <p>Pet Mart là địa chỉ cung cấp các dịch vụ chăm sóc thú cưng uy tín hàng đầu tại TPHCM. Pet Mart đã đưa ra giải pháp để giải quyết về nhu cầu vệ sinh, làm đẹp cho thú cưng của các khách hàng.
+            <h3>PetHH</h3>
+            <p>PetHH là địa chỉ cung cấp các dịch vụ chăm sóc thú cưng uy tín hàng đầu tại Hà Nội. Pet Mart đã đưa ra giải pháp để giải quyết về nhu cầu vệ sinh, làm đẹp cho thú cưng của các khách hàng.
                 Tại đây luôn sử dụng những sản phẩm chất lượng, các sản phẩm tắm, trị liệu cho thú cưng đều qua kiểm định gắt gao để đảm bảo an toàn cho mọi thú cưng của khách hàng. 
                 Đặc biệt, với đội ngũ nhân viên dày dặn kinh nghiệm, yêu thú cưng và bằng phương pháp chăm sóc, trị liệu toàn diện, Pet Mart sẽ cung cấp cho thú cưng của bạn một dịch vụ tốt nhất.
-                Sau khi được chăm sóc tại đây, các em thú cưng sẽ trở nên xinh xắn, sạch sẽ và khỏe mạnh hơn.
+                Sau khi đ   ược chăm sóc tại đây, các em thú cưng sẽ trở nên xinh xắn, sạch sẽ và khỏe mạnh hơn.
                 Chăm sóc chó con hàng ngày là một việc rất quan trọng để giúp chú chó của bạn khỏe mạnh và hạnh phúc. 
                 Việc đánh răng hằng ngày sẽ giúp chú chó của bạn không bị những bệnh về răng miệng. Việc tạo thói quen đánh răng cho chú cún từ sớm sẽ giúp giảm thiểu sự khó khăn khi bắt chúng quen với thói quen đó.
                 Và điều đó cũng sẽ đảm bảo chú chó của bạn sẽ sống một cuộc sống dài và khỏe mạnh hơn.
                 Tại Pet Mart, chúng tôi có đa dạng các sản phẩm về làm sạch răng miệng như bàn chải, kem đánh răng và loại khăn đặc biệt để lau răng miệng. Vậy tại sao bạn không ghé qua để mua chúng ngay?
             </p>
-            <a href="#">
-                <button type="button" class="btn btn-outline-secondary">Bắt đầu</button>
-            </a>
+           
         </div>
     </div>
 </div>
@@ -139,19 +117,20 @@
 <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <img src="pic/iconVac.png" class="icon">
-            <h3>Tiêm phòng</h3>
-            <p>sadasádasad</p>
+            <a href="#"><img src="pic/iconVac.png" class="icon"></a>
+            <h3>Khám chữa bệnh tại nhà</h3>
+            <p>Phục vụ nhưng khách hàng ở xa, không có thời gian hoặc sức khỏe của thú cưng không cho phép đến bệnh viện</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <img src="pic/iconEmergency.png" class="icon">
-            <h3>Cấp cứu</h3>
-            <p>ádsadáddadsasda</p>
+            <a href="#"><img src="pic/iconEmergency.png" class="icon"></a>
+            <h3>Cấp cứu 24/7</h3>
+            <p>Phục vụ kể cả ngày lễ, ngày Tết nhằm đảm bảo tính liên tục trong quá trình điều trị cho thú cưng</p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <img src="pic/iconCut.png" class="icon">
-            <h3>Tỉa lông</h3>
-            <p>ádasdasdsad</p>
+            <a href="#"><img src="pic/iconCut.png" class="icon"></a>
+            <h3>Cắt tỉa, tạo kiểu</h3>
+            <p> 
+Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối với thú cưng. Việc chăm sóc lông của chó mèo nên được quan tâm như chăm sóc sức khỏe dinh dưỡng của chúng.</p>
         </div>
         <hr class="hr">
     </div>
@@ -160,9 +139,8 @@
 <div class="container-fluid padding" >
     <div class="row padding">
         <div class="col-md-12 col-lg-6" >
-            <h2>this is cat</h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
-                 as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            <h2>PetHH - Chăm sóc bằng cả trái tim</h2>
+            <p>Nếu bạn là một người yêu thú cưng, muốn đem đến những gì tốt nhất cho chúng thì PetHealth chính là nơi đáp ứng được tất cả các yêu cầu của bạn. Đội ngũ y bác sĩ của chúng tôi được đào tạo chuyên nghiệp, trang thiết bị hiện đại cùng hệ thống chi nhánh rộng khắp đã đem đến sự hài lòng cho rất nhiều khách hàng</p>
             <br>
         </div>
         <div class="col-lg-6">
@@ -201,11 +179,9 @@
                 <p>Cuối tuần: 8h-14h</p>                
             </div>
             <div class="col-md-4">
-                <h5>Liên hệ</h5>
-                <hr class="light">
-                <p>Hotline: 19002018</p>
-                <p>Mail: gmail@gmail.com</p>
-                <p>Address: 120 Trần Hưng Đạo,Hoàn Kiếm,Hà Nội,Việt Nam</p>
+                
+            
+               
             </div>
             <div class="col-12">
                 <hr class="light-100">
