@@ -1,6 +1,5 @@
 <?php
     session_start();    
-    include('login.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,16 +77,16 @@
                 
                 <!-- Modal body -->
                 <div class="modal-body">
-                  <form action="" method="post">
+                  <form action="login.php" method="post">
                     <label>Tên Đăng Nhập:</label>  
-                    <input type="text" name="username" id="username" class="form-control" />  
-                    <p id="checku"></p>
+                    <input type="text" name="username" id="username" class="form-control" required/>  
+                    <p id="checku" style="padding-left:1px"></p>
                     
                     <label>Mật khẩu:</label>  
-                    <input type="password" name="password" id="password" class="form-control" />  
+                    <input type="password" name="password" id="password" class="form-control" required/>  
                     <br />  
-                    <button type="submit" name="login_button" id="login_button" class="btn btn-dark">Đăng nhập</button>  
-                    <button type="submit" name="login_button1" id="logon_button" class="btn btn-light">Đăng ký</button> 
+                    <button type="button" id="login_button" class="btn btn-dark">Đăng nhập</button>  
+                    
                   </form>
                 </div>
                 
@@ -239,17 +238,33 @@ Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối v�
 </footer>
 <script >
     $(document).ready(function(){
-    $("#username").blur(function(){
-        var u =$(this).val();
-        $.post("login.php",{username:u},function(data){
-            if(data==1){
-               $("#checku").html("k hop le");
+    // $("#username").blur(function(){
+        // var u =$(this).val();
+        // $.post("checkusername.php",{username:u},function(data){
+            // if(data==1){   
+               // $("#checku").html("k hop le");
+			   // $("#checku").css("color","red");
+            // }
+            // else{
+               // $("#checku").html("hop le");
+            // }
+        // });
+    // });
+	$("#login_button").click(()=>{
+		console.log('cc');
+		 var username =$("#username").val();
+		 var password =$("#password").val();
+		 $.post("login.php",{username,password},function(data){
+            if(data==0){   
+               $("#checku").html("Sai tên đăng nhập hoặc mật khẩu");
+			   $("#checku").css("color","red");
             }
-            else{
-               $("#checku").html("hop le");
-            }
+			else{
+				location.reload();
+			}
+            
         });
-    });
+	})
 })
 </script>
 </body>
