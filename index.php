@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    session_start();    
+    include('login.php'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,10 +63,42 @@
                 </ul>
         </div>
     </nav>
-     <?php
-        include('login.php');
-        
-     ?>
+  <!-- form login logout -->
+  <div class="modal fade " id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  
+                  <h4 class="modal-title">Đăng Nhập</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+               </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                  <form action="" method="post">
+                    <label>Tên Đăng Nhập:</label>  
+                    <input type="text" name="username" id="username" class="form-control" />  
+                    <p id="checku"></p>
+                    
+                    <label>Mật khẩu:</label>  
+                    <input type="password" name="password" id="password" class="form-control" />  
+                    <br />  
+                    <button type="submit" name="login_button" id="login_button" class="btn btn-dark">Đăng nhập</button>  
+                    <button type="submit" name="login_button1" id="logon_button" class="btn btn-light">Đăng ký</button> 
+                  </form>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
+            </div>
+      </div>
 <!--slide -->
 <div class="container-fluid"> 
     <div id="slides" class="carousel slide" data-ride="carousel">
@@ -196,9 +229,6 @@ Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối v�
                 <p>Cuối tuần: 8h-14h</p>                
             </div>
             <div class="col-md-4">
-                
-            
-               
             </div>
             <div class="col-12">
                 <hr class="light-100">
@@ -207,5 +237,20 @@ Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối v�
         </div>
     </div>
 </footer>
+<script >
+    $(document).ready(function(){
+    $("#username").blur(function(){
+        var u =$(this).val();
+        $.post("login.php",{username:u},function(data){
+            if(data==1){
+               $("#checku").html("k hop le");
+            }
+            else{
+               $("#checku").html("hop le");
+            }
+        });
+    });
+})
+</script>
 </body>
 </html>
