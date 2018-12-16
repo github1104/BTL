@@ -1,10 +1,9 @@
      <?php
       include('connection.php');   
-	  $username=$_POST['username'];
-	  //$password=$_POST['password'];
-	  $sql="select * from user where username='$username'";
-	  $query=mysqli_query($conn,$sql);
-	  $nums=mysqli_num_rows($query);
+	  $rgusername=$_POST['rgusername'];
+	  $query = $conn->prepare("SELECT username FROM users WHERE 
+	  username=? ");
+	  $query->execute(array($rgusername));
+	  $nums = $query->rowCount();	
 	  echo $nums;
-	 
     ?>

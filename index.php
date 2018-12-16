@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!--<script src="login.js"></script>-->    
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -39,7 +40,7 @@
                         <a class="nav-link" href="#">Liên Hệ</a>
                     </li>    
                 </ul>
-                <!-- login logout -->
+                <!-- session-login-logout -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <?php   
@@ -47,7 +48,7 @@
                         echo '<a class="nav-link" href="#" >Xin Chào '.$_SESSION['user'].'</a>';
                         }
                         else 
-                        echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng nhập</a>';
+                        echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#login">Đăng nhập</a>';
                         ?>
                     </li>
                     <li class="nav-item">
@@ -56,14 +57,14 @@
                         echo '<a class="nav-link" href="logout.php" >Đăng xuất</a>';
                         }
                         else 
-                        echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Đăng ký</a>';
+                        echo '<a class="nav-link" href="#" data-toggle="modal" data-target="#register">Đăng ký</a>';
                         ?>
                     </li>
                 </ul>
         </div>
     </nav>
-  <!-- form login logout -->
-  <div class="modal fade " id="myModal">
+<!-- form login  -->
+<div class="modal fade " id="login">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
 
@@ -77,60 +78,97 @@
                 
                 <!-- Modal body -->
                 <div class="modal-body">
-                  <form action="login.php" method="post">
+                  <form action="" method="post">
+                    
                     <label>Tên Đăng Nhập:</label>  
                     <input type="text" name="username" id="username" class="form-control" required/>  
-                    <p id="checku" style="padding-left:1px"></p>
-                    
+                    <br>
                     <label>Mật khẩu:</label>  
                     <input type="password" name="password" id="password" class="form-control" required/>  
+                    <p id="checku" style="padding-left:1px"></p>
                     <br />  
+
                     <button type="button" id="login_button" class="btn btn-dark">Đăng nhập</button>  
                     
                   </form>
                 </div>
                 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+             
                 
               </div>
             </div>
       </div>
+<!-- form register -->
+<div class="modal fade " id="register">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            
+            <h4 class="modal-title">Đăng ký tài khoản</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form action="register.php" method="post">
+            <label>Họ tên :</label>  
+            <input type="text" name="rgname" id="rgname" class="form-control"  required/>  
+            <label>Tên đăng nhập:</label>  
+            <input type="text" name="rgusername" id="rgusername" class="form-control"  required/> 
+            <p id="checkr"></p> 
+            <label>Mật khẩu:</label>  
+            <input type="password" name="rgpassword" id="rgpassword" class="form-control" required/>  
+            <label>Xác nhận mật khẩu:</label>  
+            <input type="password" name="rgcfpassword" id="rgcfpassword" class="form-control" required/>
+            <p id="checkcf"></p> 
+            <label>Email: </label>  
+            <input type="email" name="rgemail" id="email" class="form-control"  required/>  
+            <label>Số điện thoại :</label>  
+            <input type="number" name="rgnumber" id="rgnumber" class="form-control" min=9 required/> 
+            <br />  
+            <button type="submit" id="signup_button" class="btn btn-dark">Đăng ký</button>  
+            
+            </form>
+        </div>
+        
+        </div>
+    </div>
+</div>
 <!--slide -->
 <div class="container-fluid"> 
     <div id="slides" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ul class="carousel-indicators">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
             <li data-target="#slides" data-slide-to="0" class="active"></li>
             <li data-target="#slides" data-slide-to="1"></li>
             <li data-target="#slides" data-slide-to="2"></li>
-          </ul>
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
+        </ul>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="pic/dog1.jpg" >
-              <div class="carousel-caption">
+                <img src="pic/dog1.jpg" >
+                <div class="carousel-caption">
                     <h1 class="display-2">Dogo</h1>
                     <h3>Is a dog</h3>
-              </div>
+                </div>
+        </div>
+        <div class="carousel-item">
+            <img src="pic/dog2.jpg" >
+            <div class="carousel-caption">
+                <h1 class="display-2">Dogi</h1>
+                <h3>Is a dog too</h3>
             </div>
-            <div class="carousel-item">
-              <img src="pic/dog2.jpg" >
-              <div class="carousel-caption">
-                    <h1 class="display-2">Dogi</h1>
-                    <h3>Is a dog too</h3>
-              </div>
+        </div>
+        <div class="carousel-item">
+            <img src="pic/dog3.jpeg" >
+            <div class="carousel-caption">
+                <h1 class="display-2">Doga</h1>
+                <h3>Is doga</h3>
             </div>
-            <div class="carousel-item">
-              <img src="pic/dog3.jpeg" >
-              <div class="carousel-caption">
-                    <h1 class="display-2">Doga</h1>
-                    <h3>Is doga</h3>
-              </div>
-            </div>
-          </div>
+        </div>
     </div>
 </div>
 <!-- jumbotron -->
@@ -178,8 +216,7 @@
         <div class="col-xs-12 col-sm-6 col-md-4">
             <a href="#"><img src="pic/iconCut.png" class="icon"></a>
             <h3>Cắt tỉa, tạo kiểu</h3>
-            <p> 
-Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối với thú cưng. Việc chăm sóc lông của chó mèo nên được quan tâm như chăm sóc sức khỏe dinh dưỡng của chúng.</p>
+            <p>Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối với thú cưng. Việc chăm sóc lông của chó mèo nên được quan tâm như chăm sóc sức khỏe dinh dưỡng của chúng.</p>
         </div>
         <hr class="hr">
     </div>
@@ -198,6 +235,7 @@ Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối v�
     </div>
 </div>
 <hr class="hr">
+<!-- contact -->
 <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-12">
@@ -211,6 +249,7 @@ Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối v�
         </div>
     </div>
 </div>
+<!-- footer -->
 <footer>
     <div class="container-fluid padding">
         <div class="row text-center" id="txtFooter">
@@ -236,36 +275,61 @@ Bộ lông là thứ rất quan trọng và có ý nghĩa rất lớn đối v�
         </div>
     </div>
 </footer>
-<script >
-    $(document).ready(function(){
-    // $("#username").blur(function(){
-        // var u =$(this).val();
-        // $.post("checkusername.php",{username:u},function(data){
-            // if(data==1){   
-               // $("#checku").html("k hop le");
-			   // $("#checku").css("color","red");
-            // }
-            // else{
-               // $("#checku").html("hop le");
-            // }
-        // });
-    // });
-	$("#login_button").click(()=>{
-		console.log('cc');
-		 var username =$("#username").val();
-		 var password =$("#password").val();
-		 $.post("login.php",{username,password},function(data){
-            if(data==0){   
-               $("#checku").html("Sai tên đăng nhập hoặc mật khẩu");
-			   $("#checku").css("color","red");
+<script>
+$(document).ready(function(){
+    //check username form dang ky
+    $("#rgusername").blur(function(){
+         var rgusername =$(this).val();
+         $.post("checkusername.php",{rgusername},function(data){
+             if(rgusername !=""){
+                if(data==1){   
+                    $("#checkr").html("tên đăng nhập đã tồn tại");
+                    $("#checkr").css("color","red");
+                }
+                else{
+                    $("#checkr").html("hợp lệ");
+                    $("#checkr").css("color","green");
+                }
             }
-			else{
-				location.reload();
-			}
+         });
+     });
+
+     // xu ly xac nhan mat khau
+     $("#rgcfpassword").blur(function(){
+         var rgcfpassword =$("#rgcfpassword").val();
+         var rgpassword=$("#rgpassword").val();
+         if(rgcfpassword!=rgpassword){
+            $("#checkcf").html("xác nhận mật khẩu không trùng nhau");
+            $("#checkcf").css("color","red");
+         }
+         else{
+            $("#checkcf").html("");
+         }
             
-        });
-	})
-})
+     });
+
+     // xu ly form login
+     $("#login_button").click(()=>{
+          var username =$("#username").val();
+          var password =$("#password").val();
+          $.post("login.php",{username,password},function(data){           
+             if(username !="" && password !="" ){
+                if(data==0){   
+                    $("#checku").html("Sai tên đăng nhập hoặc mật khẩu");
+                    $("#checku").css("color","red");
+                }
+                else{
+                    location.reload();
+                }
+                }
+             else{
+                $("#checku").html("Vui lòng nhập đầy đủ thông tin");
+                $("#checku").css("color","red");
+             }
+         });
+     })
+     
+ })
 </script>
 </body>
 </html>
