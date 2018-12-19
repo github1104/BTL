@@ -22,9 +22,11 @@
             <a class="navbar-branch" href="#">
                 <img src="pic/logo.png" alt="logo" height="50" >
             </a>
+         <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" date-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
