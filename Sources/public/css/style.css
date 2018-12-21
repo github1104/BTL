@@ -8,6 +8,8 @@ html,body {
 }
 .navbar {
 background-color: rgba(43, 43, 40, 0.9) !important;
+position: fixed;
+width: 100%;
 }
 .navbar li a {
     color: white !important;
@@ -15,9 +17,12 @@ background-color: rgba(43, 43, 40, 0.9) !important;
 .navbar li a:hover{
     color: rgb(179, 166, 166) !important;
 }
+.carousel-inner {
+    margin-top: 68px;
+}
 .carousel-inner img {
     width: 100%;
-    height: 550px;
+    height: 550px;  
 }
 .carousel-caption {
     position: absolute;
