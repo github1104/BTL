@@ -78,6 +78,14 @@ footer {
     background-color: #ffffff;
     border-radius: .3rem;
 }
+#formDK{
+    margin:80px auto;
+    padding: 20px;
+    width: 500px;
+    border: 1px solid black;
+    background: white;
+}
+
 /*media query*/
 @media (max-width:992px){
     .carousel-caption {
