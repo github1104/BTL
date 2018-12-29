@@ -7,14 +7,24 @@ html,body {
     font-family: cursive;
 }
 .navbar {
-background-color: rgba(43, 43, 40, 0.9) !important;
-position: fixed;
-width: 100%;
+    background-color: rgba(43, 43, 40, 0.9) !important;
+    position: fixed;
+    width: 100%;
+
 }
+div.dropdown-menu{
+    background-color: rgba(43, 43, 40, 0.9);
+    padding: 0;
+}
+a.dropdown-item:hover{
+    background-color: rgba(43, 43, 40, 0.9) !important  ;
+    color: white !important;
+}
+
 .navbar li a {
     color: white !important;
 }
-.navbar li a:hover{
+.navbar li>a:hover{
     color: rgb(179, 166, 166) !important;
 }
 .carousel-inner {

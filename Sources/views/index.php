@@ -10,21 +10,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="public/pic/dog1.jpg" >
+                <img src="public/pic/dog3.jpg" >
                 <div class="carousel-caption">
                     <h1 class="display-2">Dogo</h1>
                     <h3>Is a dog</h3>
                 </div>
         </div>
         <div class="carousel-item">
-            <img src="public/pic/dog2.jpg" >
+            <img src="public/pic/dog4.jpg" >
             <div class="carousel-caption">
                 <h1 class="display-2">Dogi</h1>
                 <h3>Is a dog too</h3>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="public/pic/dog3.jpeg" >
+            <img src="public/pic/cat3.jpg" >
             <div class="carousel-caption">
                 <h1 class="display-2">Doga</h1>
                 <h3>Is doga</h3>

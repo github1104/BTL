@@ -33,8 +33,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Thông tin</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dichvu.php">Dịch vụ</a>
+                    <li class="nav-item dropdown dmenu">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Dịch vụ</a>
+                         <div class="dropdown-menu " id="dropdownMenu">
+                          <a class="dropdown-item" href="dichvu.php">Spa, cắt tỉa</a>
+                          <a class="dropdown-item" href="#">Trông giữ chó mèo</a>
+                          <a class="dropdown-item" href="#">Chuẩn đoán và điều trị</a>
+                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Liên Hệ</a>
@@ -96,46 +101,7 @@
       </div>
     </div>
 </div>
-<!-- form register 
-<div class="modal fade " id="register">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
 
-        
-        <div class="modal-header">
-            
-            <h4></h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            
-        </div>
-        
-      
-        <div class="modal-body">
-            <form action="register.php" method="post">
-            <label>Họ tên :</label>  
-            <input type="text" name="rgname" id="rgname" class="form-control"  required/>  
-            <label>Tên đăng nhập:</label>  
-            <input type="text" name="rgusername" id="rgusername" class="form-control"  required/> 
-            <p id="checkr"></p> 
-            <label>Mật khẩu:</label>  
-            <input type="password" name="rgpassword" id="rgpassword" class="form-control" required/>  
-            <label>Xác nhận mật khẩu:</label>  
-            <input type="password" name="rgcfpassword" id="rgcfpassword" class="form-control" required/>
-            <p id="checkcf"></p> 
-            <label>Email: </label>  
-            <input type="email" name="rgemail" id="email" class="form-control"  required/>  
-            <label>Số điện thoại :</label>  
-            <input type="number" name="rgnumber" id="rgnumber" class="form-control" min=9 required/> 
-            <br />  
-            <button type="submit" id="signup_button" class="btn btn-dark">Đăng ký</button>  
-            
-            </form>
-        </div>
-        
-        </div>
-    </div>
-</div>
--->
 <?php
     include("views/$view.php");
 ?>
@@ -211,7 +177,7 @@ $(document).ready(function(){
      $("#login_button").click(()=>{
           var username = $("#username").val();
           var password = $("#password").val();
-          $.post("dangnhap1.php",{username,password},function(data){    
+          $.post("dangnhap.php",{username,password},function(data){    
                  
              if(username !="" && password !="" ){
                 if(data==0){   
@@ -236,19 +202,14 @@ $(document).ready(function(){
               $("#checku").html("");
 
 
-    })
-      $('#register').on('hidden.bs.modal', function() {
-              $('#rgusername').val('');
-              $("#rgpassword").val('');
-              $("#rgcfpassword").val('');
-              $("#rgname").val('');
-              $("#email").val('');
-              $("#rgnumber").val('');
-              $("#checkr").html("");
-              $("#checkcf").html("");
-              
-    })
+    }) 
 
+     //navbar drop down hover
+     $('.navbar-light .dmenu').hover(function () {
+          $(this).find('#dropdownMenu').first().stop(true, true).slideDown(150);
+      }, function () {
+          $(this).find('#dropdownMenu').first().stop(true, true).slideUp(105)
+      });
 
  })
 </script>
