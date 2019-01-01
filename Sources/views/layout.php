@@ -15,7 +15,7 @@
 </head>
 <body>
 <!-- navbar -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-branch" href="#">
                 <img src="public/pic/logo.png" alt="logo" height="50" >
@@ -37,7 +37,7 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Dịch vụ</a>
                          <div class="dropdown-menu " id="dropdownMenu">
                           <a class="dropdown-item" href="dichvu.php">Spa, cắt tỉa</a>
-                          <a class="dropdown-item" href="#">Trông giữ chó mèo</a>
+                          <a class="dropdown-item" href="tronggiu.php">Trông giữ chó mèo</a>
                           <a class="dropdown-item" href="#">Chuẩn đoán và điều trị</a>
                          </div>
                     </li>
@@ -139,8 +139,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function(){
-    //check username form dang ky
-    
+    //ajax check username form dang ky
     $("#rgusername").blur(function(){
          var rgusername =$(this).val();
          $.post("checkusername.php",{rgusername},function(data){
@@ -158,13 +157,14 @@ $(document).ready(function(){
      });
      
 
-     // xu ly xac nhan mat khau
+     // ajax xu ly xac nhan mat khau
      $("#rgcfpassword").blur(function(){
          var rgcfpassword = $("#rgcfpassword").val();
          var rgpassword= $("#rgpassword").val();
          if(rgcfpassword!=rgpassword){
             $("#checkcf").html("xác nhận mật khẩu không trùng nhau");
             $("#checkcf").css("color","red");
+           
          }
          else{
             $("#checkcf").html("");
@@ -172,7 +172,7 @@ $(document).ready(function(){
             
      });
 
-     // xu ly form login
+     // ajax xu ly form login
      
      $("#login_button").click(()=>{
           var username = $("#username").val();
@@ -201,7 +201,6 @@ $(document).ready(function(){
               $("#password").val('');
               $("#checku").html("");
 
-
     }) 
 
      //navbar drop down hover
@@ -210,6 +209,43 @@ $(document).ready(function(){
       }, function () {
           $(this).find('#dropdownMenu').first().stop(true, true).slideUp(105)
       });
+
+     //ajax binh luan
+     $("#binhluan").click(()=>{
+          comment = $("#comment").val();
+          login = $("#btnLogin").val();
+        //Neu chua dang nhap thi hien thi form dang nhap
+        if (typeof login != 'undefined'){
+          $('#login').modal('show');
+        }
+        else{
+          $.post("comment.php",{comment},function(data){
+              $("#comment").val('');
+              $("#formCMT").after(data);
+          })
+        }
+        return false;
+     })
+
+     //ajax rep binh luan
+     $(".Repbinhluan").click(()=>{
+        var login = $("#btnLogin").val();
+        var id = $(this).attr("data-comid");
+        var Repcomment = $("#Repcomment"+id).val(); 
+        console.log(id);
+        console.log(Repcomment);
+        if (typeof login != 'undefined'){
+          $('#login').modal('show');
+        }
+        else{
+          $.post("repComment.php",{Repcomment: Repcomment},function(data){
+              console.log(data);
+              $("#comment").val('');
+              $("#userComment"+id).after(data);
+          })
+        }
+        return false;
+     })
 
  })
 </script>

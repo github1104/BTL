@@ -44,5 +44,22 @@ class M_user extends database{
 		return $this->loadRow(array($username,$md5_password));
 	}
 
+	function addComment($id_user,$noidung){
+		$sql ="INSERT INTO comment(idUser,NoiDung,create_up) VALUES(?,?,now())";
+		$this->setQuery($sql);
+		return $this->execute(array($id_user,$noidung));
+	}
+
+	function getComment(){
+		$sql = "SELECT name,cmt.* FROM user JOIN comment cmt on user.id = cmt.idUser order by cmt.id desc";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
+
+	function addRepComent($idComment,$name,$noidung){
+		$sql ="INSERT INTO repcomment(idComment,name,NoiDung,create_up) VALUES(?,?,?,now())";
+		$this->setQuery($sql);
+		return $this->execute(array($idComment,$name,$noidung));
+	}
 }
 ?>

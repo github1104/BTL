@@ -37,6 +37,7 @@ class C_user{
 		
 		if($user){
 			$_SESSION['user']=$user->name;
+			$_SESSION['id_user']=$user->id;
 			header("location:index.php");
 		}
 
@@ -44,7 +45,26 @@ class C_user{
 
 	function dangxuat(){
 		session_destroy();
-		header("location:index.php");	
+		header("refresh:0;url=". $_SERVER['HTTP_REFERER']);	
+		
+	}
+
+	function addComment($id_user,$noidung){
+		$m_user = new M_user();
+		$binhluan = $m_user->addComment($id_user,$noidung);
+		
+	}
+
+	function getComment(){
+		$m_user = new M_user();
+		$comment = $m_user->getComment();  	
+		return array('comment'=>$comment);
+	}
+
+	function addRepComment($idComment,$name,$noidung){
+		$m_user = new M_user();
+		$binhluan = $m_user->addComment($idComment,$name,$noidung);
+		
 	}
 }
 ob_end_flush();

@@ -87,7 +87,7 @@
     <div class="row padding">
         <div class="col-md-12 col-lg-6" >
             <h2>PetHH - Chăm sóc bằng cả trái tim</h2>
-            <p>Nếu bạn là một người yêu thú cưng, muốn đem đến những gì tốt nhất cho chúng thì PetHealth chính là nơi đáp ứng được tất cả các yêu cầu của bạn. Đội ngũ y bác sĩ của chúng tôi được đào tạo chuyên nghiệp, trang thiết bị hiện đại cùng hệ thống chi nhánh rộng khắp đã đem đến sự hài lòng cho rất nhiều khách hàng</p>
+            <p>Nếu bạn là một người yêu thú cưng, muốn đem đến những gì tốt nhất cho chúng thì PetHHchính là nơi đáp ứng được tất cả các yêu cầu của bạn. Đội ngũ y bác sĩ của chúng tôi được đào tạo chuyên nghiệp, trang thiết bị hiện đại cùng hệ thống chi nhánh rộng khắp đã đem đến sự hài lòng cho rất nhiều khách hàng</p>
             <br>
         </div>
         <div class="col-lg-6">

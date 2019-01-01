@@ -16,6 +16,11 @@ class Controller{
 	function dangky(){
 		$this->loadView('dangky');
 	}
+
+	function tronggiu(){
+		$this->loadView('tronggiu');
+	}
+
 }
  
 ?>
