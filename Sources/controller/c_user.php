@@ -6,13 +6,15 @@ class C_user{
 		$m_user=new M_user();
 		$id_user = $m_user->dangky($name,$username,$password,$email);
 		if($id_user>0){
+			$user = $m_user->dangnhap($username,$password);
 			$_SESSION['sucuess'] = "Đăng kí thành công";
 			$_SESSION['user'] = $name;
+			$_SESSION['id_user']=$user->id;
 			if(headers_sent()){
 				die('<script type="text/javascript">window.location.href="index.php"</script>');
 			}
 			else{
-				header('location:index.php');
+				header('location:dangky.php');
 				die();
 			}	
 			if(isset($_SESSION['error'])){
@@ -63,8 +65,20 @@ class C_user{
 
 	function addRepComment($idComment,$name,$noidung){
 		$m_user = new M_user();
-		$binhluan = $m_user->addComment($idComment,$name,$noidung);
-		
+		$binhluan = $m_user->addRepComent($idComment,$name,$noidung);	
+
+	}
+
+	function getRepComment($idComment){
+		$m_user = new M_user();
+		$repComment = $m_user->getRepComment($idComment);  	
+		return array('RepComment'=>$repComment);
+	}
+
+	function getNumRepComment($idComment){
+		$m_user = new M_user();
+		$repComment = $m_user->getNumRepComment($idComment);
+		return $repComment->numRep;
 	}
 }
 ob_end_flush();

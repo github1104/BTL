@@ -3,7 +3,6 @@ include'controller/c_user.php';
 $c_user = new C_user();
 $comment = $c_user->getComment();
 $comment = $comment['comment'];
-
 ?>
 <div class="container-fuild" id="dichvu" style="margin-top: 80px;margin-bottom: 20px;">
 	<div class="row" style="margin-right:0;">
@@ -69,33 +68,49 @@ $comment = $comment['comment'];
 				<?php
 					foreach($comment as $cmt){
 						$timestamp = $cmt->create_up;
-						$date=date('d/m/Y',strtotime($timestamp));
+						$date=date('d/m/Y ',strtotime($timestamp));
 						$content=nl2br($cmt->NoiDung);
 						$id=$cmt->id;
+						//dung 2 vong lap de in rep comment
+						$getNum = $c_user->getNumRepComment($id);
+						$repComment = $c_user->getRepComment($id);
+						$repComment = $repComment['RepComment'];
 				?>
-				<div class="media border p-2 " id='userComment<?=$id?>'>
+				<div class="media border p-2 " id='userComment<?=$id?>' >
 				    <img src="public/pic/user.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
 				    <div class="media-body">
 				      <h4><?=$cmt->name?></h4>
 				      <p id="noidungcmt" ><?=$content?></p>
-				      <small><i>đăng ngày <?=$date?></i></small>
-				      <button type="button" class="btn btn-primary float-right" >Trả lời</button>      
+				      <small><i>đăng ngày <?=$date?></i></small>				    
+				      <button type="button" class="btn btn-primary float-right" onclick="showRep(<?=$id?>)" >Trả lời</button>     
+				      <button type="button" class="btn btn-primary float-right" onclick="showViewRep(<?=$id?>)" >Có <?=$getNum?> phản hồi</button>  
+
 			    	</div>
 	  			</div>
 	  			<!-- Rep Comment -->
-				<div class="media border p-2 ml-5" id="userReply" style="font-size: 16px;">
+	  				<?php
+	  					foreach ($repComment as $repcmt) {
+	  						$noidung=nl2br($repcmt->NoiDung);
+	  						$repTimestamp = $repcmt->create_up;
+							$repDate=date('d/m/Y ',strtotime($repTimestamp));
+
+	  				?>
+				<div class="media border p-2 ml-5 userReply<?=$id?>"  style="font-size: 16px;display: none;">
 				    <img src="public/pic/user.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:45px;">
 				    <div class="media-body">
-				      <h5>Name</h5>
-				      <p id="repCmt">test 2</p>
-				      <small><i>đăng ngày </i></small>      
+				      <h5><?=$repcmt->name?></h5>
+				      <p id="repCmt"><?=$noidung?></p>
+				      <small><i>đăng ngày <?=$repDate?></i></small>      
 			    	</div>
 	  			</div>	
+	  				<?php
+	  					}
+	  				?>
 	  			<!-- Form Rep Comment -->
-	  			<form class="formReply ml-5 mt-1">
+	  			<form class='formReply<?=$id?> ml-5 mt-1' style="display: none;">
 					<div class="form-group">					 
 					  <textarea cols="50" class="form-control " name="repComment" rows="2" id='Repcomment<?=$id?>' ></textarea>
-					  <button type="submit" class="btn btn-primary Repbinhluan" data-comid='<?=$id?>'>Trả lời</button>
+					  <button type="button" onclick="repcmt(<?=$id?>)" class="btn btn-primary Repbinhluan">Trả lời</button>
 					</div>			
 				</form>  
 				<?php
@@ -104,4 +119,5 @@ $comment = $comment['comment'];
   			</div>
 		</div>
 	</div>
+	
 </div>

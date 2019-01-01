@@ -107,6 +107,21 @@
 ?>
 
 </div>
+<hr class="hr">
+<!-- contact -->
+<div class="container-fluid padding">
+    <div class="row text-center padding">
+        <div class="col-12">
+            <h2>Liên hệ với chúng tôi</h2>
+        </div>
+        <div class="col-12 social padding">
+            <a href="http://fb.com" target="_blank"><img src="public/pic/iconFb.png" alt=""></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="public/pic/iconInstagram.png" alt=""></a>
+            <a href="https://twitter.com/login?lang=vi" target="_blank"><img src="public/pic/iconTwitter.png" alt=""></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="public/pic/iconYoutube.png" alt=""></a>
+        </div>
+    </div>
+</div>
 <!-- footer -->
 <footer>
     <div class="container-fluid padding">
@@ -137,118 +152,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<script>
-$(document).ready(function(){
-    //ajax check username form dang ky
-    $("#rgusername").blur(function(){
-         var rgusername =$(this).val();
-         $.post("checkusername.php",{rgusername},function(data){
-             if(rgusername !=""){
-                if(data==1){   
-                    $("#checkr").html("tên đăng nhập đã tồn tại");
-                    $("#checkr").css("color","red");
-                }
-                else{
-                    $("#checkr").html("hợp lệ");
-                    $("#checkr").css("color","green");
-                }
-            }
-         });
-     });
-     
-
-     // ajax xu ly xac nhan mat khau
-     $("#rgcfpassword").blur(function(){
-         var rgcfpassword = $("#rgcfpassword").val();
-         var rgpassword= $("#rgpassword").val();
-         if(rgcfpassword!=rgpassword){
-            $("#checkcf").html("xác nhận mật khẩu không trùng nhau");
-            $("#checkcf").css("color","red");
-           
-         }
-         else{
-            $("#checkcf").html("");
-         }
-            
-     });
-
-     // ajax xu ly form login
-     
-     $("#login_button").click(()=>{
-          var username = $("#username").val();
-          var password = $("#password").val();
-          $.post("dangnhap.php",{username,password},function(data){    
-                 
-             if(username !="" && password !="" ){
-                if(data==0){   
-                    $("#checku").html("Sai tên đăng nhập hoặc mật khẩu");
-                    $("#checku").css("color","red");
-                }
-                else{
-                    location.reload();
-                }
-                }
-             else{
-                $("#checku").html("Vui lòng nhập đầy đủ thông tin");
-                $("#checku").css("color","red");
-             }
-         });
-     })
-
-     // reset input khi modal ẩn
-     $('#login').on('hidden.bs.modal', function() {
-              $('#username').val('');
-              $("#password").val('');
-              $("#checku").html("");
-
-    }) 
-
-     //navbar drop down hover
-     $('.navbar-light .dmenu').hover(function () {
-          $(this).find('#dropdownMenu').first().stop(true, true).slideDown(150);
-      }, function () {
-          $(this).find('#dropdownMenu').first().stop(true, true).slideUp(105)
-      });
-
-     //ajax binh luan
-     $("#binhluan").click(()=>{
-          comment = $("#comment").val();
-          login = $("#btnLogin").val();
-        //Neu chua dang nhap thi hien thi form dang nhap
-        if (typeof login != 'undefined'){
-          $('#login').modal('show');
-        }
-        else{
-          $.post("comment.php",{comment},function(data){
-              $("#comment").val('');
-              $("#formCMT").after(data);
-          })
-        }
-        return false;
-     })
-
-     //ajax rep binh luan
-     $(".Repbinhluan").click(()=>{
-        var login = $("#btnLogin").val();
-        var id = $(this).attr("data-comid");
-        var Repcomment = $("#Repcomment"+id).val(); 
-        console.log(id);
-        console.log(Repcomment);
-        if (typeof login != 'undefined'){
-          $('#login').modal('show');
-        }
-        else{
-          $.post("repComment.php",{Repcomment: Repcomment},function(data){
-              console.log(data);
-              $("#comment").val('');
-              $("#userComment"+id).after(data);
-          })
-        }
-        return false;
-     })
-
- })
-</script>
+<script src="public/js/myjs.js"></script>
 <script lang="javascript">var _vc_data = {id : 6506746, secret : '3d13a6e0e891275cf2e9a612442075af'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//live.vnpgroup.net/client/tracking.js?id=6506746';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();
 </script>           
 </body>

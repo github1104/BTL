@@ -17,7 +17,7 @@ if(isset($id_user)){
 				      <h4>$name</h4>
 				      <p id='noidungcmt'>$content</p>
 				      <small><i>đăng ngày ".date("d/m/Y")."</i></small>    
-				      <button type='button' class='btn btn-primary float-right' id='repbinhluan'>Trả lời</button>  
+				      <button type='button'  class='btn btn-primary float-right' id='repbinhluan'>Trả lời</button>  
 			    	</div>
 	  			</div>";
 	}

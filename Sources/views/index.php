@@ -95,17 +95,3 @@
         </div>
     </div>
 </div>
-<hr class="hr">
-<!-- contact -->
-<div class="container-fluid padding">
-    <div class="row text-center padding">
-        <div class="col-12">
-            <h2>Liên hệ với chúng tôi</h2>
-        </div>
-        <div class="col-12 social padding">
-            <a href="http://fb.com" target="_blank"><img src="public/pic/iconFb.png" alt=""></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="public/pic/iconInstagram.png" alt=""></a>
-            <a href="https://twitter.com/login?lang=vi" target="_blank"><img src="public/pic/iconTwitter.png" alt=""></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="public/pic/iconYoutube.png" alt=""></a>
-        </div>
-    </div>

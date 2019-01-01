@@ -2,17 +2,23 @@
 include('controller/c_user.php');
 $c_user = new C_user();
 if(isset($_POST['dangki'])){
-      $rgname=$_POST['rgname'];
-      $rgusername=$_POST['rgusername'];
-      $rgpassword=$_POST['rgpassword'];
-      $rgcfpassword=$_POST['rgcfpassword'];
-      $rgemail=$_POST['rgemail'];
-      if($rgpassword==$rgcfpassword){
-          $c_user = $c_user->dangkyTK($rgname,$rgusername,$rgpassword,$rgemail);
-      }
-      else{
-          $_SESSION['error']="";
-      }
+  $rgname=$_POST['rgname'];
+  $rgusername=$_POST['rgusername'];
+  $rgpassword=$_POST['rgpassword'];
+  $rgcfpassword=$_POST['rgcfpassword'];
+  $rgemail=$_POST['rgemail'];
+  if(!isset($_SESSION['user'])){
+    if($rgpassword==$rgcfpassword){       
+        $c_user = $c_user->dangkyTK($rgname,$rgusername,$rgpassword,$rgemail);
+    }
+    else{
+        
+    }
+  }
+  else{
+      unset($_SESSION['sucuess']);
+      $_SESSION['error']="Bạn đã đăng kí tài khoảng rồi";
+  }
 }
 
 ?>
@@ -22,6 +28,9 @@ if(isset($_POST['dangki'])){
      <?php
          if(isset($_SESSION['error'])){
               echo "<div class='alert alert-danger'>".$_SESSION['error']."</div>";
+         }
+         if(isset($_SESSION['sucuess'])){
+              echo "<div class='alert alert-success'>".$_SESSION['sucuess']."</div>";
          }
      ?>
      <form action="#" method="post">

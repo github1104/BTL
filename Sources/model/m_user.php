@@ -45,7 +45,7 @@ class M_user extends database{
 	}
 
 	function addComment($id_user,$noidung){
-		$sql ="INSERT INTO comment(idUser,NoiDung,create_up) VALUES(?,?,now())";
+		$sql ="INSERT INTO comment(idUser,NoiDung) VALUES(?,?)";
 		$this->setQuery($sql);
 		return $this->execute(array($id_user,$noidung));
 	}
@@ -57,9 +57,21 @@ class M_user extends database{
 	}
 
 	function addRepComent($idComment,$name,$noidung){
-		$sql ="INSERT INTO repcomment(idComment,name,NoiDung,create_up) VALUES(?,?,?,now())";
+		$sql ="INSERT INTO repcomment(idComment,name,NoiDung) VALUES(?,?,?)";
 		$this->setQuery($sql);
 		return $this->execute(array($idComment,$name,$noidung));
+	}
+
+	function getRepComment($idComment){
+		$sql = "SELECT name,NoiDung,create_up FROM repcomment where idComment='$idComment'";
+		$this->setQuery($sql);
+		return $this->loadAllRows(array($idComment));
+	}
+
+	function getNumRepComment($idComment){
+		$sql = "SELECT COUNT(idComment) numRep FROM repcomment where idComment='$idComment'";
+		$this->setQuery($sql);
+		return $this->loadRow(array($idComment));
 	}
 }
 ?>
