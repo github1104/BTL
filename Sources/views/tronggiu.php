@@ -28,7 +28,6 @@
 			<div class="col-md-6">
 				<p>
 					Thời gian ăn uống dành cho thú cưng đảm bảo theo khung giờ khoa học hợp lý. Chế độ dinh dưỡng đảm bảo cân bằng, phù hợp và cần thiết cho thú cưng.<br>
-					
 				</p>
 			</div>
 		</div>
