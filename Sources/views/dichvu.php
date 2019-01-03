@@ -1,7 +1,8 @@
 <?php
+$idDv=$_GET['id'];
 include'controller/c_user.php';
 $c_user = new C_user();
-$comment = $c_user->getComment();
+$comment = $c_user->getComment($idDv);
 $comment = $comment['comment'];
 ?>
 <div class="container-fuild" id="dichvu" style="margin-top: 80px;margin-bottom: 20px;">
@@ -54,12 +55,14 @@ $comment = $comment['comment'];
 			- Có dịch vụ đưa đón các bé tận nơi, tư vấn khách hàng tận tâm.<br>
 			</p>
 			<br>
+			<!--  Comment -->
 			<div style="width: 700px;">
 				<h4>Bình luận</h4>
 				<!-- Form Comment -->
 				<form id="formCMT">
 					<div class="form-group">
 					  <input type="hidden" id="iduser" value="<?=$_SESSION['id_user']?>">
+					  <input type="hidden" id="idDv" value="<?=$idDv?>">
 					  <textarea cols="60" class="form-control" name="comment" rows="4" id="comment" placeholder="Viết bình luận ..." ></textarea>
 					  <button type="submit" class="btn btn-primary binhluan" name="binhluan" id="binhluan">Gửi</button>
 					</div>			
@@ -84,7 +87,6 @@ $comment = $comment['comment'];
 				      <small><i>đăng ngày <?=$date?></i></small>				    
 				      <button type="button" class="btn btn-primary float-right" onclick="showRep(<?=$id?>)" >Trả lời</button>     
 				      <button type="button" class="btn btn-primary float-right" onclick="showViewRep(<?=$id?>)" >Có <?=$getNum?> phản hồi</button>  
-
 			    	</div>
 	  			</div>
 	  			<!-- Rep Comment -->

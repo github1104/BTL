@@ -51,15 +51,14 @@ class C_user{
 		
 	}
 
-	function addComment($id_user,$noidung){
+	function addComment($id_user,$noidung,$idDv){
 		$m_user = new M_user();
-		$binhluan = $m_user->addComment($id_user,$noidung);
-		
+		$binhluan = $m_user->addComment($id_user,$noidung,$idDv);
 	}
 
-	function getComment(){
+	function getComment($idDv){
 		$m_user = new M_user();
-		$comment = $m_user->getComment();  	
+		$comment = $m_user->getComment($idDv);  	
 		return array('comment'=>$comment);
 	}
 

@@ -36,8 +36,8 @@
                     <li class="nav-item dropdown dmenu">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Dịch vụ</a>
                          <div class="dropdown-menu " id="dropdownMenu">
-                          <a class="dropdown-item" href="dichvu.php">Spa, cắt tỉa</a>
-                          <a class="dropdown-item" href="tronggiu.php">Trông giữ chó mèo</a>
+                          <a class="dropdown-item" href="dichvu.php?id=0">Spa, cắt tỉa</a>
+                          <a class="dropdown-item" href="tronggiu.php?id=1">Trông giữ chó mèo</a>
                           <a class="dropdown-item" href="#">Chuẩn đoán và điều trị</a>
                          </div>
                     </li>

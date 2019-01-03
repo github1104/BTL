@@ -5,10 +5,11 @@ $c_user = new C_user();
 $name = $_SESSION['user'];
 $id_user = $_SESSION['id_user'];
 $noidung = $_POST['comment'];
+$idDv = $_POST['idDv'];
 date_default_timezone_set("Asia/Ho_Chi_Minh");
 if(isset($id_user)){
 	if ($noidung!=""){
-			$binhluan = $c_user->addComment($id_user,$noidung);
+			$binhluan = $c_user->addComment($id_user,$noidung,$idDv);
 			$content=nl2br($noidung);
 
 			echo "<div class='media border p-2' id='userComment'>

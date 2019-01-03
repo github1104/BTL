@@ -71,6 +71,7 @@ $(document).ready(function(){
 
      //ajax binh luan
      $("#binhluan").click(()=>{
+          idDv = $("#idDv").val();
           comment = $("#comment").val();
           login = $("#btnLogin").val();
         //Neu chua dang nhap thi hien thi form dang nhap
@@ -78,7 +79,7 @@ $(document).ready(function(){
           $('#login').modal('show');
         }
         else{
-          $.post("comment.php",{comment},function(data){
+          $.post("comment.php",{comment,idDv},function(data){
               $("#comment").val('');
               $("#formCMT").after(data);
           })
