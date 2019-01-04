@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2019 at 03:38 AM
+-- Generation Time: Jan 04, 2019 at 06:00 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -44,7 +44,11 @@ CREATE TABLE `comment` (
 INSERT INTO `comment` (`id`, `idUser`, `idBaiViet`, `NoiDung`, `create_up`, `create_end`) VALUES
 (56, 22, 1, 'dịch vụ rất tốt', '2019-01-01 09:08:23', '2019-01-03 16:00:55'),
 (57, 22, 1, 'đã xem', '2019-01-01 09:09:24', '2019-01-03 16:01:05'),
-(58, 18, 2, 'xin giá ạ', '2019-01-03 13:40:31', '2019-01-03 16:01:13');
+(58, 18, 2, 'xin giá ạ', '2019-01-03 13:40:31', '2019-01-03 16:01:13'),
+(59, 22, 3, 'chuẩn đoán ntn vậy', '2019-01-04 02:42:21', '2019-01-04 02:42:21'),
+(60, 27, 3, 'dsfsdfs', '2019-01-04 02:49:15', '2019-01-04 02:49:15'),
+(61, 27, 1, 'asdasd', '2019-01-04 02:49:23', '2019-01-04 02:49:23'),
+(62, 27, 2, 'asdasdas', '2019-01-04 02:49:35', '2019-01-04 02:49:35');
 
 -- --------------------------------------------------------
 
@@ -57,8 +61,24 @@ CREATE TABLE `datlich` (
   `idUser` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `phone` varchar(11) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `diachi` varchar(250) NOT NULL,
+  `thongtin` varchar(250) NOT NULL,
+  `yeucau` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `datlich`
+--
+
+INSERT INTO `datlich` (`id`, `idUser`, `name`, `phone`, `diachi`, `thongtin`, `yeucau`, `date`, `status`) VALUES
+(1, 22, 'hoang', '1211212121', '1120 asas', 'dsadasdasd', 'asdsada', '2019-01-04 03:40:33', 'waiting'),
+(2, 22, 'hoang', '2312123', '12 assa', 'assasa', 'asassa', '2019-01-04 03:40:42', 'waiting'),
+(3, 22, 'hoang', '2312123', '12 assa', 'assasa', 'asassa', '2019-01-04 03:42:56', 'waiting'),
+(4, 22, 'hoang', '2312123', '12 assa', 'assasa', 'asassa', '2019-01-04 03:43:38', 'waiting'),
+(5, 22, 'hoang dang', '0123456465', '120 haha', 'cho husky\r\n-20kg\r\n', 'tia long\r\ntam rua', '2019-01-04 03:53:23', 'waiting'),
+(6, 22, 'sdasd', '23123123', 'đâs', 'dsada', 'áddsa', '2019-01-04 03:57:45', 'waiting');
 
 -- --------------------------------------------------------
 
@@ -130,9 +150,12 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `email`, `role`) VALUES
 (18, 'hoangdang', 'a', 'c4ca4238a0b923820dcc509a6f75849b', 'sasa@gmail.com', 'admin'),
-(22, 'a1', 'a1', 'c4ca4238a0b923820dcc509a6f75849b', '21@sd', NULL),
-(23, 'Bùi Tiến Dũng', 'TienDung123', '202cb962ac59075b964b07152d234b70', 'TienDung123@gmail.com', NULL),
-(24, 'Đặng Tiếng Đông', 'TienDong11', '202cb962ac59075b964b07152d234b70', 'nam@gmail.com', NULL);
+(22, 'a1', 'a1', 'c4ca4238a0b923820dcc509a6f75849b', '21@sd', 'customer'),
+(23, 'Bùi Tiến Dũng', 'TienDung123', '202cb962ac59075b964b07152d234b70', 'TienDung123@gmail.com', 'customer'),
+(24, 'Đặng Tiếng Đông', 'TienDong11', '202cb962ac59075b964b07152d234b70', 'nam@gmail.com', 'customer'),
+(25, 'hoang hung', 'hoanghung112', 'c4ca4238a0b923820dcc509a6f75849b', 'hoanghung112@gmail.com', 'customer'),
+(26, 'Van Lam', 'vanlam2203', 'c4ca4238a0b923820dcc509a6f75849b', 'vanlam2203@gmail.com', 'customer'),
+(27, 'Cong Phuong', 'CongPhung1105', 'c4ca4238a0b923820dcc509a6f75849b', 'CongPhung1105@gmail.com', 'customer');
 
 --
 -- Indexes for dumped tables
@@ -183,13 +206,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `datlich`
 --
 ALTER TABLE `datlich`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `dichvu`
@@ -207,7 +230,7 @@ ALTER TABLE `repcomment`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
