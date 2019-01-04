@@ -2,11 +2,11 @@
 include('database.php');
 class M_user extends database{
 	function dangky($name,$username,$password,$email){
-		$sql="INSERT INTO user (name,username,password,email) VALUES(?,?,?,?)";
+		$sql="INSERT INTO user (name,username,password,email,role) VALUES(?,?,?,?,'customer')";
 		$this->setQuery($sql);
 		$result = $this->execute(array($name,$username,md5($password),$email));
 		if($result){
-			return $this->getLastId();	 
+			return $this->getLastId();	 	
 		}
 		else{
 			return false;
@@ -85,6 +85,18 @@ class M_user extends database{
 		$sql = "SELECT COUNT(idComment) numRep FROM repcomment where idComment='$idComment'";
 		$this->setQuery($sql);
 		return $this->loadRow(array($idComment));
+	}
+
+	function datlich($id_user,$name,$phone,$diachi,$thongtin,$yeucau){
+		$sql ="INSERT INTO datlich(idUser,name,phone,diachi,thongtin,yeucau,status) VALUES(?,?,?,?,?,?,'waiting') ";
+		$this->setQuery($sql);
+		return $this->execute(array($id_user,$name,$phone,$diachi,$thongtin,$yeucau));
+	}
+
+	function checkDL($id_user){
+		$sql = "SELECT status FROM datlich where idUser='$id_user'";
+		$this->setQuery($sql);
+		return $this->loadRow(array($id_user));
 	}
 }
 ?>

@@ -23,13 +23,14 @@
 		<div class="list-group">
 			<a href="index.php" class="list-group-item list-group-item-action " id="home">Home</a>
 			<a href="#" class="list-group-item list-group-item-action " id="user">Quản lý thành viên</a>
+			<a href="#" class="list-group-item list-group-item-action ">Lịch hẹn</a>
 			<a href="#" class="list-group-item list-group-item-action ">Quản lý dịch vụ</a>
 			<a href="#" class="list-group-item list-group-item-action ">Quản lý bài viết</a>
 			<a href="#" class="list-group-item list-group-item-action ">Thống kê</a>
 		</div>
 	</div>
 	<div class="col-8" id="div">
-
+		<h2 class='text-center mb-2'>Home</h2>
 	</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

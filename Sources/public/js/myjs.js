@@ -87,6 +87,13 @@ $(document).ready(function(){
         }
         return false;
      })  
+
+     $("#datlich").click(()=>{
+        login = $("#btnLogin").val();
+          if (typeof login != 'undefined'){
+          $('#login').modal('show');
+        }
+     })
  })
  //ajax rep binh luan
   function repcmt(id){ 

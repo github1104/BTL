@@ -88,6 +88,26 @@ class C_user{
 		$repComment = $m_user->getNumRepComment($idComment);
 		return $repComment->numRep;
 	}
+
+	function addDatLich($id_user,$name,$phone,$diachi,$thongtin,$yeucau){
+		$m_user = new M_user();
+		$datlich = $m_user->datlich($id_user,$name,$phone,$diachi,$thongtin,$yeucau);	
+		if($datlich){
+			$_SESSION['dlSussess']="Đặt lịch thành công";
+		}
+		else{
+			$_SESSION['fail']="Đặt lịch không thành công";
+		}
+	}
+
+	function checkDL($id_user){
+		$m_user = new M_user();
+		$status = $m_user->checkDL($id_user);
+		if($status){
+		return $status->status;
+		}
+
+	}
 }
 ob_end_flush();
 ?>
