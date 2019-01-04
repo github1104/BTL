@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2019 at 03:34 AM
+-- Generation Time: Jan 04, 2019 at 03:38 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -45,6 +45,20 @@ INSERT INTO `comment` (`id`, `idUser`, `idBaiViet`, `NoiDung`, `create_up`, `cre
 (56, 22, 1, 'dịch vụ rất tốt', '2019-01-01 09:08:23', '2019-01-03 16:00:55'),
 (57, 22, 1, 'đã xem', '2019-01-01 09:09:24', '2019-01-03 16:01:05'),
 (58, 18, 2, 'xin giá ạ', '2019-01-03 13:40:31', '2019-01-03 16:01:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `datlich`
+--
+
+CREATE TABLE `datlich` (
+  `id` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -133,6 +147,13 @@ ALTER TABLE `comment`
   ADD KEY `FK_id_Dv` (`idBaiViet`);
 
 --
+-- Indexes for table `datlich`
+--
+ALTER TABLE `datlich`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_id_userdl` (`idUser`);
+
+--
 -- Indexes for table `dichvu`
 --
 ALTER TABLE `dichvu`
@@ -165,6 +186,12 @@ ALTER TABLE `comment`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
+-- AUTO_INCREMENT for table `datlich`
+--
+ALTER TABLE `datlich`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `dichvu`
 --
 ALTER TABLE `dichvu`
@@ -192,6 +219,12 @@ ALTER TABLE `user`
 ALTER TABLE `comment`
   ADD CONSTRAINT `FK_id_Dv` FOREIGN KEY (`idBaiViet`) REFERENCES `dichvu` (`id`),
   ADD CONSTRAINT `FK_id_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`);
+
+--
+-- Constraints for table `datlich`
+--
+ALTER TABLE `datlich`
+  ADD CONSTRAINT `FK_id_userdl` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`);
 
 --
 -- Constraints for table `repcomment`
