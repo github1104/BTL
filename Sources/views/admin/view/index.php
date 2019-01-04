@@ -23,7 +23,7 @@
 		<div class="list-group">
 			<a href="index.php" class="list-group-item list-group-item-action " id="home">Home</a>
 			<a href="#" class="list-group-item list-group-item-action " id="user">Quản lý thành viên</a>
-			<a href="#" class="list-group-item list-group-item-action ">Lịch hẹn</a>
+			<a href="#" class="list-group-item list-group-item-action " id="lichhen">Lịch hẹn</a>
 			<a href="#" class="list-group-item list-group-item-action ">Quản lý dịch vụ</a>
 			<a href="#" class="list-group-item list-group-item-action ">Quản lý bài viết</a>
 			<a href="#" class="list-group-item list-group-item-action ">Thống kê</a>
@@ -42,8 +42,8 @@ $(document).ready(function(){
 	$("#user").click(()=>{
 		$("#div").load("getUser.php");
 	});
-	$("#user").click(()=>{
-
+	$("#lichhen").click(()=>{
+		$("#div").load("lichhen.php");
 	});
 })
 </script>

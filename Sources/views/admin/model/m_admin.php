@@ -6,5 +6,11 @@ class M_admin extends database{
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
+
+	function getLich(){
+		$sql="SELECT * FROM datlich ";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
 }
 ?>

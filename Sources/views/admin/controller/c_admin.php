@@ -8,6 +8,12 @@ class C_admin{
 		return $user;
 	}
 
+	function getLich(){
+		$m_admin = new M_admin();
+		$user = $m_admin->getLich();
+		return $user;
+	}
+
 	function dangxuat(){
 		session_start();
 		session_destroy();
