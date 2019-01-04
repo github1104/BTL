@@ -3,6 +3,7 @@ $(document).ready(function(){
     $("#rgusername").blur(function(){
          var rgusername =$(this).val();
          $.post("checkusername.php",{rgusername},function(data){
+
              if(rgusername !=""){
                 if(data==1){   
                     $("#checkr").html("tên đăng nhập đã tồn tại");
@@ -31,13 +32,13 @@ $(document).ready(function(){
             
      });
 
-     // ajax xu ly form login
+     // ajax xu ly form dang nhap
      
      $("#login_button").click(()=>{
           var username = $("#username").val();
           var password = $("#password").val();
           $.post("dangnhap.php",{username,password},function(data){    
-                 
+             
              if(username !="" && password !="" ){
                 if(data==0){   
                     $("#checku").html("Sai tên đăng nhập hoặc mật khẩu");

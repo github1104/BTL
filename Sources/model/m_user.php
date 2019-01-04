@@ -14,11 +14,24 @@ class M_user extends database{
 	}
 
 	function dangnhap($username,$md5_password){
-		$sql="SELECT * FROM user WHERE username=? AND password=?";
+		$sql="SELECT * FROM user WHERE username=? AND password=? ";
 		$this->setQuery($sql);
 		$result = $this->execute(array($username,md5($md5_password)));
 		$nums = $result->rowCount();
-		if($nums>0){
+		if($nums>0){			
+			return $result->fetch(PDO::FETCH_OBJ);
+		}
+		else{
+			echo $nums;
+		}
+	}
+
+	function dangnhapAdmin($username,$md5_password){
+		$role="SELECT * FROM user WHERE username=? AND password=? AND role='admin'";
+		$this->setQuery($role);
+		$result = $this->execute(array($username,md5($md5_password)));
+		$nums = $result->rowCount();
+		if($nums>0){			
 			return $result->fetch(PDO::FETCH_OBJ);
 		}
 		else{

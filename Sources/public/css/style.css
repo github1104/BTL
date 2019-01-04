@@ -101,6 +101,32 @@ footer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+.caption-centered {
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(38, 38, 38, 0.8);
+  text-align: center;
+  padding: 20px;
+}
+
+.caption-centered-datlich {
+  width: 450px;
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(38, 38, 38, 0.8);
+  padding: 20px;
+}
+.lh_wrapper {
+  position: relative;
+}
 /*media query*/
 @media (max-width:992px){
     .carousel-caption {

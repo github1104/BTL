@@ -81,43 +81,43 @@
     </div>
 </div>
 <!-- our team -->
-<div class="container">
-    <h1 class="display-4 text-center">Đội ngũ của chúng tôi</h1>
+<div class="container-fuild bg-dark p-5">
+    <h1 class="display-4 text-center text-white">Đội ngũ y bác sĩ</h1>
     <br>
     <div class="row">
     <div class="col-md-4">
-        <div class="card ourTeam">
+        <div class="card ourTeam p-1">
             <img src="public/pic/doctor1.jpg" alt="" style="width: 100%;height:320px; ">
-            <div class="container">
-                <h2>Jane Doe</h2>
-                <p class="text-secondary">Veterinarians</p>
-                <p>Có 10 năm kinh nghiệm trong lĩnh vực điều trị và chăm sóc thú cưng.</p>
+            <div class="container text-center">
+                <h2>Alex</h2>
+                <p >Bác Sĩ Nội Trú</p>
+                <p>Alex là trưởng phòng trẻ nhất tại PetHH. Nhưng với kỹ năng và một tình yêu động vật mãnh liệt, bạn sẽ yên tâm khi gửi gắm thú cưng cho anh ấy</p>
                 <p class="text-muted"><img src="public/pic/iconMail.png" alt=""> JaneDoe1102@gmail.com</p>
-                <p><button class="btn btn-dark ">Contact</button></p>
+                <p><button class="btn btn-dark ">Liên hệ</button></p>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card ourTeam">
             <img src="public/pic/doctor2.jpg" alt="" style="width: 100%;height:320px;">
-            <div class="container">
+            <div class="container text-center">
                 <h2>John Doe</h2>
-                <p class="text-secondary">Veterinarians</p>
-                <p>Có 10 năm kinh nghiệm trong lĩnh vực điều trị và chăm sóc thú cưng.</p>
+                <p >Bác Sĩ Phẫu Thuật</p>
+                <p>John Doe là bác sĩ phẫu thuật hàng đầu tại PetHH. Kinh nghiệm và kỹ năng tuyệt vời của anh đã cứu sống rất nhiều thú cưng</p>
                 <p class="text-muted"><img src="public/pic/iconMail.png" alt=""> JohnDoe1202@gmail.com</p>
-                <p><button class="btn btn-dark">Contact</button></p>
+                <p><button class="btn btn-dark">Liện hệ</button></p>
             </div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="card ourTeam">
             <img src="public/pic/doctor3.jpg" alt="" style="width: 100%;height:320px;">
-            <div class="container">
+            <div class="container text-center">
                 <h2>Mike Ross</h2>
-                <p class="text-secondary">Veterinarians</p>
-                <p>Có 10 năm kinh nghiệm trong lĩnh vực điều trị và chăm sóc thú cưng.</p>
+                <p >Bác Sĩ Chẩn Đoán Hình Ảnh</p>
+                <p>Mike Ross bắt đầu trở thành bác sĩ thú y khi đến với PetHH hơn 10 năm trước. Anh ấy đã đưa chẩn đoán hình ảnh tại PetHH lên tầm cao mới</p>
                 <p class="text-muted"><img src="public/pic/iconMail.png" alt=""> MikeRoss1150@gmail.com</p>
-                <p><button class="btn btn-dark">Contact</button></p>
+                <p><button class="btn btn-dark">Liên hệ</button></p>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 03:27 PM
+-- Generation Time: Jan 04, 2019 at 03:34 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `petshop`
 --
-CREATE DATABASE IF NOT EXISTS `petshop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `petshop`;
 
 -- --------------------------------------------------------
 
@@ -40,17 +38,13 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Truncate table before insert `comment`
---
-
-TRUNCATE TABLE `comment`;
---
 -- Dumping data for table `comment`
 --
 
 INSERT INTO `comment` (`id`, `idUser`, `idBaiViet`, `NoiDung`, `create_up`, `create_end`) VALUES
-(56, 22, 0, 'dịch vụ rất tốt', '2019-01-01 09:08:23', '2019-01-01 09:08:23'),
-(57, 22, 0, 'đã xem', '2019-01-01 09:09:24', '2019-01-01 09:09:24');
+(56, 22, 1, 'dịch vụ rất tốt', '2019-01-01 09:08:23', '2019-01-03 16:00:55'),
+(57, 22, 1, 'đã xem', '2019-01-01 09:09:24', '2019-01-03 16:01:05'),
+(58, 18, 2, 'xin giá ạ', '2019-01-03 13:40:31', '2019-01-03 16:01:13');
 
 -- --------------------------------------------------------
 
@@ -67,10 +61,14 @@ CREATE TABLE `dichvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Truncate table before insert `dichvu`
+-- Dumping data for table `dichvu`
 --
 
-TRUNCATE TABLE `dichvu`;
+INSERT INTO `dichvu` (`id`, `Tendv`, `MoTa`, `Gia`, `Hinh`) VALUES
+(1, 'Spa, cắt tỉa', 'Dịch vụ Spa, Grooming chó mèo', '', ''),
+(2, 'Trông giữ chó mèo', 'Dịch vụ trông giữ chó mèo - Khách sạn thú cưng', '', ''),
+(3, 'Chuẩn đoán và điều trị', 'Cấp cứu khám lâm sàng', '', '');
+
 -- --------------------------------------------------------
 
 --
@@ -86,11 +84,6 @@ CREATE TABLE `repcomment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Truncate table before insert `repcomment`
---
-
-TRUNCATE TABLE `repcomment`;
---
 -- Dumping data for table `repcomment`
 --
 
@@ -99,7 +92,8 @@ INSERT INTO `repcomment` (`id`, `idComment`, `name`, `NoiDung`, `create_up`) VAL
 (12, 56, 'hoangdang', 'cám ơn', '2019-01-01 09:41:04'),
 (13, 57, 'hoangdang', 'hay', '2019-01-01 09:58:30'),
 (14, 57, 'hoangdang', 'hay ghe', '2019-01-01 09:59:14'),
-(15, 57, 'Đặng Tiếng Đông', 'hay hay', '2019-01-01 10:41:00');
+(15, 57, 'Đặng Tiếng Đông', 'hay hay', '2019-01-01 10:41:00'),
+(16, 57, 'hoangdang', 'hay', '2019-01-03 13:15:37');
 
 -- --------------------------------------------------------
 
@@ -117,16 +111,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Truncate table before insert `user`
---
-
-TRUNCATE TABLE `user`;
---
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `name`, `username`, `password`, `email`, `role`) VALUES
-(18, 'hoangdang', 'a', 'c4ca4238a0b923820dcc509a6f75849b', 'sasa@gmail.com', NULL),
+(18, 'hoangdang', 'a', 'c4ca4238a0b923820dcc509a6f75849b', 'sasa@gmail.com', 'admin'),
 (22, 'a1', 'a1', 'c4ca4238a0b923820dcc509a6f75849b', '21@sd', NULL),
 (23, 'Bùi Tiến Dũng', 'TienDung123', '202cb962ac59075b964b07152d234b70', 'TienDung123@gmail.com', NULL),
 (24, 'Đặng Tiếng Đông', 'TienDong11', '202cb962ac59075b964b07152d234b70', 'nam@gmail.com', NULL);
@@ -140,7 +129,8 @@ INSERT INTO `user` (`id`, `name`, `username`, `password`, `email`, `role`) VALUE
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_id_user` (`idUser`);
+  ADD KEY `FK_id_user` (`idUser`),
+  ADD KEY `FK_id_Dv` (`idBaiViet`);
 
 --
 -- Indexes for table `dichvu`
@@ -172,19 +162,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `dichvu`
 --
 ALTER TABLE `dichvu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `repcomment`
 --
 ALTER TABLE `repcomment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -200,6 +190,7 @@ ALTER TABLE `user`
 -- Constraints for table `comment`
 --
 ALTER TABLE `comment`
+  ADD CONSTRAINT `FK_id_Dv` FOREIGN KEY (`idBaiViet`) REFERENCES `dichvu` (`id`),
   ADD CONSTRAINT `FK_id_user` FOREIGN KEY (`idUser`) REFERENCES `user` (`id`);
 
 --

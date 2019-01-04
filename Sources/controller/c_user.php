@@ -36,11 +36,21 @@ class C_user{
 	function dangnhapTK($username,$password){
 		$m_user = new M_user();
 		$user = $m_user->dangnhap($username,$password);
+		$admin = $m_user->dangnhapAdmin($username,$password);
 		
 		if($user){
+			if($admin){
+			$_SESSION['admin']=$admin->name;
+			echo "1";
+			}
+			else{
 			$_SESSION['user']=$user->name;
 			$_SESSION['id_user']=$user->id;
-			header("location:index.php");
+			echo "1";
+			}
+		}
+		else{
+			echo "0";
 		}
 
 	}
@@ -48,7 +58,6 @@ class C_user{
 	function dangxuat(){
 		session_destroy();
 		header("refresh:0;url=". $_SERVER['HTTP_REFERER']);	
-		
 	}
 
 	function addComment($id_user,$noidung,$idDv){

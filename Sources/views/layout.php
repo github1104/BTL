@@ -1,5 +1,8 @@
 <?php
     session_start();    
+    if(isset($_SESSION['admin'])){
+        header("location:views/admin/index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,19 +34,24 @@
                         <a class="nav-link active" href="index.php">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Thông tin</a>
+                        <a class="nav-link" href="gioithieu.php">Thông tin</a>
                     </li>
                     <li class="nav-item dropdown dmenu">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Dịch vụ</a>
                          <div class="dropdown-menu " id="dropdownMenu">
-                          <a class="dropdown-item" href="dichvu.php?id=0">Spa, cắt tỉa</a>
-                          <a class="dropdown-item" href="tronggiu.php?id=1">Trông giữ chó mèo</a>
-                          <a class="dropdown-item" href="#">Chuẩn đoán và điều trị</a>
+                          <a class="dropdown-item" href="dichvu.php?id=1">Spa, cắt tỉa</a>
+                          <a class="dropdown-item" href="tronggiu.php?id=2">Trông giữ chó mèo</a>
+                          <a class="dropdown-item" href="chuandoan.php?id=3">Chuẩn đoán và điều trị</a>
+                          <a class="dropdown-item" href="#">Phối giống</a>
+                          <a class="dropdown-item" href="#">Huấn luyện</a>
                          </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Liên Hệ</a>
+                        <a class="nav-link" href="lienhe.php">Liên Hệ</a>
                     </li>    
+                     <li class="nav-item">
+                        <a class="nav-link" href="datlich.php">Đặt lịch</a>
+                    </li>  
                 </ul>
                 <!-- session-login-logout -->
                 <ul class="navbar-nav ml-auto">

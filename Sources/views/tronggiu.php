@@ -46,6 +46,34 @@ $comment = $comment['comment'];
 				</div>
 			</div>
 			<h3>Bảng giá dịch vụ</h3>
+			<p>Kích thước của phòng chỉ có thể ước lượng và tham khảo. Thực tế có thể tùy theo nhu cầu sử dụng của mỗi thú cưng. </p>
+			<div class="row">
+				<div class="col-md-3 ">
+					<div class="card bg-primary text-center text-white p-1">
+						<p>Pet tối đa 5kg</p>
+						<button class="btn btn-dark w-50 m-auto" >100k/Ngày</button>
+					</div>
+				</div>
+				<div class="col-md-3 ">
+					<div class="card bg-primary text-center text-white p-1">
+						<p>Pet tối đa 10kg</p>
+						<button class="btn btn-dark w-50 m-auto" >150k/Ngày</button>
+					</div>	
+				</div>
+				<div class="col-md-3 ">
+					<div class="card bg-primary text-center text-white p-1">
+						<p>Pet tối đa 15kg</p>
+						<button class="btn btn-dark w-50 m-auto" >200k/Ngày</button>
+					</div>	
+				</div>
+				<div class="col-md-3 ">
+					<div class="card bg-primary text-center text-white p-1">
+						<p>Pet trên 20kg</p>
+						<button class="btn btn-dark w-50 m-auto" >300k/Ngày</button>
+					</div>	
+				</div>
+			</div>
+			<br>
 			<!--  Binh Luan -->
 			<div style="width: 700px;">
 				<h4>Bình luận</h4>

@@ -21,6 +21,21 @@ class Controller{
 		$this->loadView('tronggiu');
 	}
 
+	function lienhe(){
+		$this->loadView('lienhe');
+	}
+
+	function gioithieu(){
+		$this->loadView('gioithieu');
+	}
+
+	function chuandoan(){
+		$this->loadView('chuandoan');
+	}
+
+	function datlich(){
+		$this->loadView('datlich');
+	}
 }
  
 ?>
