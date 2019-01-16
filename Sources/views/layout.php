@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>PetHH - Shop Dịch vụ thú cưng</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <!--<script src="login.js"></script>-->    
     <link rel="stylesheet" href="public/css/style.css" type="text/css">
@@ -34,7 +34,7 @@
                         <a class="nav-link active" href="index.php">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gioithieu.php">Thông tin</a>
+                        <a class="nav-link" href="gioithieu.php">Giới thiệu</a>
                     </li>
                     <li class="nav-item dropdown dmenu">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Dịch vụ</a>
@@ -44,17 +44,24 @@
                           <a class="dropdown-item" href="chuandoan.php?id=3">Chuẩn đoán và điều trị</a>
                           <a class="dropdown-item" href="#">Phối giống</a>
                           <a class="dropdown-item" href="#">Huấn luyện</a>
+
                          </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="lienhe.php">Liên Hệ</a>
                     </li>    
-                     <li class="nav-item">
-                        <a class="nav-link" href="datlich.php">Đặt lịch</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="datlich.php?id=4">Đặt lịch</a>
                     </li>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="sanpham.php">Sản phẩm</a>
+                    </li> 
                 </ul>
                 <!-- session-login-logout -->
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giỏ hàng</a>
+                    </li> 
                     <li class="nav-item">
                         <?php   
                         if(isset($_SESSION['user'])){
@@ -97,7 +104,7 @@
             <input type="text" name="username" id="username" class="form-control" required/>  
             <br>
             <label>Mật khẩu:</label>  
-            <input type="password" name="password" id="password" class="form-control" required/>  
+            <input type="password" name="password" id="password" class="form-control" value ="$" required/>  
             <p id="checku" style="padding-left:1px"></p>
             <br />  
 

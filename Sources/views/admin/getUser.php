@@ -28,3 +28,8 @@ $user = $c_admin->getUser();
 	?> 
     </tbody>
 </table>
+<div class="btn">
+  <button class="btn btn-success">Thêm thành viên</button>
+  <button class="btn btn-info">Cập nhật tài khoản</button>
+  <button class="btn btn-danger">Xóa tài khoản</button>
+</div>

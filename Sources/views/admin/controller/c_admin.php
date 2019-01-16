@@ -10,8 +10,8 @@ class C_admin{
 
 	function getLich(){
 		$m_admin = new M_admin();
-		$user = $m_admin->getLich();
-		return $user;
+		$lich = $m_admin->getLich();
+		return $lich;
 	}
 
 	function dangxuat(){
@@ -20,6 +20,11 @@ class C_admin{
 		header('location:../../index.php');	
 	}
 
+	function getdichvu(){
+		$m_admin = new M_admin();
+		$dichvu = $m_admin->dichvu();
+		return $dichvu;
+	}
 }
 ob_end_flush();
 ?>

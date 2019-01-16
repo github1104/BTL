@@ -12,5 +12,12 @@ class M_admin extends database{
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
+
+	function dichvu(){
+		$sql="SELECT * FROM dichvu ";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
+
 }
 ?>

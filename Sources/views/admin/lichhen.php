@@ -34,3 +34,7 @@ $lichhen = $c_admin->getLich();
 	?> 
     </tbody>
 </table>
+<div class="btn">
+  <button class="btn btn-info">Cập nhật lịch</button>
+  <button class="btn btn-danger">Xóa lịch</button>
+</div>

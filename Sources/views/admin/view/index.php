@@ -24,7 +24,8 @@
 			<a href="index.php" class="list-group-item list-group-item-action " id="home">Home</a>
 			<a href="#" class="list-group-item list-group-item-action " id="user">Quản lý thành viên</a>
 			<a href="#" class="list-group-item list-group-item-action " id="lichhen">Lịch hẹn</a>
-			<a href="#" class="list-group-item list-group-item-action ">Quản lý dịch vụ</a>
+			<a href="#" class="list-group-item list-group-item-action " id="dichvu">Quản lý dịch vụ</a>
+			<a href="#" class="list-group-item list-group-item-action ">Quản lý sản phẩm bán hàng</a>
 			<a href="#" class="list-group-item list-group-item-action ">Quản lý bài viết</a>
 			<a href="#" class="list-group-item list-group-item-action ">Thống kê</a>
 		</div>
@@ -44,6 +45,9 @@ $(document).ready(function(){
 	});
 	$("#lichhen").click(()=>{
 		$("#div").load("lichhen.php");
+	});
+	$("#dichvu").click(()=>{
+		$("#div").load("dichvu.php");
 	});
 })
 </script>

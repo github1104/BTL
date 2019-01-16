@@ -36,6 +36,10 @@ class Controller{
 	function datlich(){
 		$this->loadView('datlich');
 	}
+
+	function sanpham(){
+		$this->loadView('sanpham');
+	}
 }
  
 ?>
